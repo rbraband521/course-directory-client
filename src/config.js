@@ -1,4 +1,4 @@
 
 export default {
-    apiBaseUrl: 'https://full-stack-course-directory.herokuapp.com',
+    apiBaseUrl: 'https://full-stack-course-directory.herokuapp.com/api',
   };

@@ -1,4 +1,4 @@
 
 export default {
-    apiBaseUrl: 'https://full-stack-course-directory.herokuapp.com/api',
+    apiBaseUrl: 'https://safe-garden-88273.herokuapp.com/api',
   };

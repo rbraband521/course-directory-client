@@ -1,4 +1,4 @@
-//This file holds the functions for requesting data from the REST API
+//This file holds the functions for requesting data from the REST APIs
 import config from './config';
 
 export default class Data {

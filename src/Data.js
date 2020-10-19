@@ -1,11 +1,11 @@
 //This file holds the functions for requesting data from the REST API
 import config from './config';
-const baseUrl = config.apiBaseUrl;
+// const baseUrl = config.apiBaseUrl;
 
 export default class Data {
   //REST API call structure
   api(path, method = 'GET', body = null, requiresAuth = false, credentials = null) {
-    // const url = config.apiBaseUrl + path;
+    const url = config.apiBaseUrl + path;
   
     const options = {
       method,
@@ -24,12 +24,12 @@ export default class Data {
       const encodedCredentials = btoa(`${credentials.emailAddress}:${credentials.password}`);
       options.headers['Authorization'] = `Basic ${encodedCredentials}`;
     }
-    return fetch(path, options);
+    return fetch(url, options);
   }
 /**********GET USERS*********/
 //credentials are included
   async getUser(emailAddress, password, firstName, id) {
-    const response = await this.api(`${baseUrl}/api/users`, 'GET', null, true, { emailAddress, password, firstName, id });
+    const response = await this.api('/api/users', 'GET', null, true, { emailAddress, password, firstName, id });
     console.log(response);
     if (response.status === 200) {
       return response.json().then(data => data);
@@ -61,7 +61,7 @@ export default class Data {
 
   /**********GET COURSES*********/
   async getCourses() {
-    const response = await this.api(`${baseUrl}/api/courses`, 'GET')
+    const response = await this.api('/api/courses', 'GET')
     if(response.status === 200) {
       console.log(response.id);
       return response.json().then(data => data)
@@ -74,7 +74,7 @@ export default class Data {
   }
 /**********GET COURSES BY ID*********/
   async getCourseId(id) {
-    const response = await this.api(`${baseUrl}/api/courses/${id}`, 'GET')
+    const response = await this.api(`/api/courses/${id}`, 'GET')
     if(response.status === 200) {
       console.log(response);
       return response.json().then(data => data)

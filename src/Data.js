@@ -1,6 +1,6 @@
 //This file holds the functions for requesting data from the REST API
 import config from './config';
-
+const baseUrl = config.apiBaseUrl;
 
 export default class Data {
   //REST API call structure
@@ -61,7 +61,7 @@ export default class Data {
 
   /**********GET COURSES*********/
   async getCourses() {
-    const response = await this.api('/courses', 'GET')
+    const response = await this.api(`${baseUrl}/api/courses`, 'GET')
     if(response.status === 200) {
       console.log(response);
       return response.json().then(data => data)
@@ -74,7 +74,7 @@ export default class Data {
   }
 /**********GET COURSES BY ID*********/
   async getCourseId(id) {
-    const response = await this.api(`/courses/${id}`, 'GET')
+    const response = await this.api(`${baseUrl}/api/courses/${id}`, 'GET')
     if(response.status === 200) {
       console.log(response);
       return response.json().then(data => data)

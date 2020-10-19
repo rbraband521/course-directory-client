@@ -1,6 +1,6 @@
 //This file holds the functions for requesting data from the REST API
 // import config from './config';
-import apiBaseUrl from '../config/apiBaseUrl.js';
+import apiBaseUrl from './config/apiBaseUrl.js';
 
 export default class Data {
   //REST API call structure

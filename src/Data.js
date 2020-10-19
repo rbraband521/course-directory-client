@@ -73,9 +73,9 @@ export default class Data {
   }
 /**********GET COURSES BY ID*********/
   async getCourseId(id) {
-    const response = await this.api(`${config.apiBaseUrl}/api/courses/${id}`, 'GET')
+    const response = await this.api(`/courses/${id}`, 'GET')
     if(response.status === 200) {
-      // console.log(response);
+      console.log(response);
       return response.json().then(data => data)
     } else if (response.status === 404) {
       return null;

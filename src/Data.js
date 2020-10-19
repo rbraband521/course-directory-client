@@ -43,7 +43,7 @@ export default class Data {
   }
  /**********CREATE USER*********/
   async createUser(user) {
-    const response = await this.api(`${baseUrl}/api/users`, 'POST', user);
+    const response = await this.api('/api/users', 'POST', user);
     if (response.status === 201) {
       return [];
     }
@@ -88,7 +88,7 @@ export default class Data {
 /**********CREATE A NEW COURSE*********/
 //body is the new course payload and the credentials are of the signed in user
   async createCourse(course, emailAddress, password) {
-    const response = await this.api(`${baseUrl}/api/courses`, 'POST', course, true, {emailAddress, password});
+    const response = await this.api('/api/courses', 'POST', course, true, {emailAddress, password});
     if (response.status === 201) {
       return [];
     }
@@ -105,7 +105,7 @@ export default class Data {
 
   /**********UPDATE COURSE*********/
   async updateCourse(id, course, emailAddress, password) {
-    const response = await this.api(`${baseUrl}/api/courses/${id}`, 'PUT', course, true, {emailAddress, password});
+    const response = await this.api('/api/courses/${id}', 'PUT', course, true, {emailAddress, password});
     console.log(response);
     if (response.status === 204) {
       return [];
@@ -123,7 +123,7 @@ export default class Data {
 /**********DELETE COURSE*********/
 //user information must be available here with credentials to verify the correct authorization
   async deleteCourse(id, emailAddress, password) {
-    const response = await this.api(`${baseUrl}/api/courses/${id}`, 'DELETE', null, true, {emailAddress, password});
+    const response = await this.api('/api/courses/${id}', 'DELETE', null, true, {emailAddress, password});
     console.log(response);
     if (response.status === 204) {
       return [];

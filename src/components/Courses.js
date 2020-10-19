@@ -34,7 +34,7 @@ class Courses extends Component {
     if(this.state.courses.length > 0) {
         courses = this.state.courses.map((course) => 
             <div className="grid-33" key={course.id}>
-                <a className="course--module course--link" href={'/courses/' + course.id}>
+                <a className="course--module course--link" href={'api/courses/' + course.id}>
                     <h4 className="course--label">Course</h4>
                     <h3 className="course--title">{course.title}</h3>
                 </a>

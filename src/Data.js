@@ -5,7 +5,7 @@ import apiBaseUrl from './config';
 export default class Data {
   //REST API call structure
   api(path, method = 'GET', body = null, requiresAuth = false, credentials = null) {
-    const url = config.apiBaseUrl + path;
+    const url = apiBaseUrl + path;
   
     const options = {
       method,

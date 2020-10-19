@@ -11,7 +11,7 @@ export default class Data {
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
       },
-      mode: 'no-cors'
+      // mode: 'no-cors'
     };
 
     if (body !== null) {

@@ -75,7 +75,7 @@ export default class UserSignIn extends Component {
     .then( user => {
       if (user === null) {
         this.setState(() => {
-          console.log(errors);
+          console.log(this.state.errors);
           return { errors: [ 'Sign-in was unsuccessful' ] };
         });
         } else {

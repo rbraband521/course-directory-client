@@ -15,10 +15,8 @@ class Courses extends Component {
     //the getCourses function is called with context and sets the courses state to the response
     async componentDidMount() {
         const { context } = this.props;
-        console.log(context);
         context.data.getCourses().then(response => {
             this.setState({courses: response})
-            console.log(response);
         }) 
         .catch((error => { 
             console.log('Error fetching and parsing data', error);
@@ -30,7 +28,7 @@ class Courses extends Component {
     //************If no courses are returned, the user is directed to the Not Found Error page
     render() {
     let courses;
-    console.log(this.state.courses);
+    // console.log(this.state.courses);
     if(this.state.courses.length > 0) {
         courses = this.state.courses.map((course) => 
             <div className="grid-33" key={course.id}>

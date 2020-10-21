@@ -27,7 +27,7 @@ export default class UpdateCourse extends Component {
     async componentDidMount() {
         const { context } = this.props;
         const authUser =  this.props.context.authenticatedUser;
-        console.log();
+        // console.log();
         let { id }  = this.props.match.params;
         await context.data.getCourseId(id)
             .then(response => {
@@ -68,7 +68,7 @@ export default class UpdateCourse extends Component {
             materialsNeeded,
             errors
         } = this.state;
-        console.log(title);
+        // console.log(title);
         return (
             <div className= "bounds course--detail">
                 <h1>Update Course</h1>

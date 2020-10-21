@@ -131,13 +131,13 @@ export default class CourseDetail extends Component {
     deleteCourse = () => {
         const { context } = this.props;
         const courseId = this.state.courseId;
-        console.log(courseId);
+        // console.log(courseId);
 
         if (context.authenticatedUser) {
             const { emailAddress, password } = context.authenticatedUser;
             context.data.deleteCourse(courseId, emailAddress, password)
             .then( errors => {
-            console.log(errors);
+            // console.log(errors);
             if (errors.length > 0) {
                 this.setState({ errors });
             } else {

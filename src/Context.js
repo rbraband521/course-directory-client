@@ -19,7 +19,6 @@ export class Provider extends Component {
 
   render() {
     const { authenticatedUser, password, id } = this.state;
-    console.log(this.state);
     const value = {
       authenticatedUser,
       password,
@@ -44,7 +43,7 @@ export class Provider extends Component {
     if (user !== null) {
       user.password = password;
       user.emailAddress = user.Username;
-      console.log(user);
+      // console.log(user);
       this.setState(() => {
         return {
           authenticatedUser: user,
@@ -53,7 +52,7 @@ export class Provider extends Component {
       // Set cookie
       Cookies.set('authenticatedUser', JSON.stringify(user), { expires: 1 });
     }
-    console.log(user);
+    // console.log(user);
     return user;
   }
 /**********SIGN OUT FUNCTION*********/

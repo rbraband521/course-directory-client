@@ -11,11 +11,9 @@ export default ({ context }) => {
     return (
       <div className="header">
         <div className="bounds">
-        <nav>
-          <Link to="/">
-            <h1 className="header--logo">Courses</h1>
-          </Link>
-        </nav>
+        <div className="header--logo">
+          <Link to='/'>Courses</Link>
+        </div>
         <nav>
           {/*if theren's an authorized user display a welcome message : display sign up/sign in links */}
             {authUser ?

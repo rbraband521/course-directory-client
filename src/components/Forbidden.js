@@ -9,7 +9,7 @@ export default () => {
       <div className="bounds">
         <h1>Forbidden</h1>
         <p>Sorry, you must be the course creator in order to update.</p>
-        <div className="button-home">
+        <div className="button">
           <Link to="/">Return Home</Link>
         </div>
       </div>

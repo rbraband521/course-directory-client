@@ -12,9 +12,11 @@ export default ({ context }) => {
       <div className="header">
         <div className="bounds">
         <nav>
-        <Link to="/">
-          <h1 className="header--logo">Courses</h1>
-        </Link>
+          <Link to="/">
+            <h1 className="header--logo">Courses</h1>
+          </Link>
+        </nav>
+        <nav>
           {/*if theren's an authorized user display a welcome message : display sign up/sign in links */}
             {authUser ?
               <React.Fragment>
